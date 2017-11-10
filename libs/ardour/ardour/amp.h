@@ -57,8 +57,8 @@ public:
 	static gain_t apply_gain (BufferSet& bufs, samplecnt_t sample_rate, samplecnt_t nframes, gain_t initial, gain_t target, bool midi_amp = true);
 	static void apply_simple_gain(BufferSet& bufs, samplecnt_t nframes, gain_t target, bool midi_amp = true);
 
-	static gain_t apply_gain (AudioBuffer& buf, samplecnt_t sample_rate, samplecnt_t nframes, gain_t initial, gain_t target);
-	static void apply_simple_gain(AudioBuffer& buf, samplecnt_t nframes, gain_t target);
+	static gain_t apply_gain (AudioBuffer& buf, samplecnt_t sample_rate, samplecnt_t nframes, gain_t initial, gain_t target, sampleoffset_t offset = 0);
+	static void apply_simple_gain (AudioBuffer& buf, samplecnt_t nframes, gain_t target, sampleoffset_t offset = 0);
 
 	boost::shared_ptr<GainControl> gain_control() {
 		return _gain_control;
